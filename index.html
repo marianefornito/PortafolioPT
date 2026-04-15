@@ -8,18 +8,20 @@
 
   <style>
     .pdf-viewer {
-    width: 100%;
-    height: 900px;
-    border: 1px solid var(--line);
-    background: var(--white);
-    overflow: hidden;
-}
+      width: 100%;
+      height: 420px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      overflow: hidden;
+      border-radius: 8px;
+    }
 
-.pdf-viewer iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
+    .pdf-viewer iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
     /* FUENTES LOCALES */
     @font-face {
       font-family: "MontserratBlack";
@@ -43,14 +45,16 @@
     }
 
     :root {
-      --bg: #f6f3ee;
-      --card: #ece7df;
-      --card-2: #e3ddd4;
-      --accent: #8c7961;
-      --accent-dark: #6f5d49;
-      --text: #111111;
-      --muted: #4d4d4d;
-      --line: #d8d1c8;
+      --bg: #f7f4f2;
+      --card: #f1ebe6;
+      --card-2: #e8eef4;
+      --accent: #b8c9da;
+      --accent-2: #ecdde3;
+      --accent-3: #f3e7b3;
+      --accent-dark: #6e6a86;
+      --text: #161616;
+      --muted: #4e4e57;
+      --line: #ddd7d0;
       --white: #ffffff;
     }
 
@@ -60,6 +64,9 @@
 
     body {
       font-family: "MontserratRegular", sans-serif;
+      background:
+        linear-gradient(180deg, rgba(236,221,227,0.18) 0%, rgba(247,244,242,1) 18%),
+        linear-gradient(135deg, rgba(184,201,218,0.14) 0%, rgba(243,231,179,0.10) 100%);
       background-color: var(--bg);
       color: var(--text);
       overflow-x: hidden;
@@ -94,9 +101,9 @@
     }
 
     .logo {
-      font-family: "MontserratBlack", sans-serif;
+      font-family: Georgia, "Times New Roman", serif;
       font-size: clamp(24px, 2.2vw, 34px);
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
     }
 
@@ -117,9 +124,9 @@
     }
 
     .nav a:hover {
-      background-color: var(--accent);
+      background-color: var(--accent-dark);
       color: var(--white);
-      border-color: var(--accent);
+      border-color: var(--accent-dark);
     }
 
     /* GRID GENERAL */
@@ -130,11 +137,12 @@
     }
 
     .card {
-      background: var(--white);
+      background: rgba(255, 255, 255, 0.92);
       border: 1px solid var(--line);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
       min-height: 250px;
       overflow: hidden;
+      backdrop-filter: blur(2px);
     }
 
     .card-inner {
@@ -152,9 +160,10 @@
     }
 
     h1, h2, h3, h4 {
-      font-family: "MontserratBlack", sans-serif;
+      font-family: Georgia, "Times New Roman", serif;
       text-transform: uppercase;
-      line-height: 0.95;
+      line-height: 0.98;
+      letter-spacing: 0.5px;
     }
 
     h1 {
@@ -190,10 +199,11 @@
       background-color: var(--text);
       color: var(--white);
       font-family: "MontserratBold", sans-serif;
-      font-size: 13px;
+      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
       transition: 0.2s ease;
+      border-radius: 2px;
     }
 
     .btn:hover {
@@ -220,7 +230,7 @@
     /* BLOQUES */
     .hero {
       grid-column: span 6;
-      background: var(--card);
+      background: linear-gradient(135deg, var(--card) 0%, var(--accent-2) 100%);
       min-height: 360px;
     }
 
@@ -281,7 +291,7 @@
     }
 
     .muted-box {
-      background: var(--card);
+      background: linear-gradient(135deg, rgba(184,201,218,0.22) 0%, rgba(243,231,179,0.18) 100%);
     }
 
     .quote {
@@ -293,7 +303,7 @@
     }
 
     .quote p {
-      font-family: "MontserratBlack", sans-serif;
+      font-family: Georgia, "Times New Roman", serif;
       text-transform: uppercase;
       color: var(--text);
       font-size: clamp(18px, 2vw, 32px);
@@ -303,13 +313,9 @@
 
     .contact-card {
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
+      grid-template-columns: 1fr;
       min-height: 220px;
       background: var(--white);
-    }
-
-    .contact-card .image-side {
-      min-height: 220px;
     }
 
     .contact-card .text-side {
@@ -342,8 +348,7 @@
         grid-template-columns: 1fr;
       }
 
-      .project-card .image-side,
-      .contact-card .image-side {
+      .project-card .image-side {
         min-height: 300px;
       }
     }
@@ -391,9 +396,9 @@
       <section class="card hero">
         <div class="card-inner">
           <div class="eyebrow">Portafolio</div>
-          <h1>Mariane fornito angulo</h1>
+          <h1>Mariane Fornito Angulo</h1>
           <p class="intro-text">
-            Soy estudiante de Diseño Integral interesada en el diseño afectivamente significativo y en la forma en que las emociones influyen en la manera en que las personas sienten, deciden y actúan dentro de contextos sociales y educativos.
+            Como estudiante de la Licenciatura en Diseño Integral, mi interés se orienta hacia el diseño afectivamente significativo, al considerar que la dimensión emocional influye de manera directa en la forma en que las personas interpretan su entorno, toman decisiones y se relacionan dentro de distintos contextos sociales y educativos.
           </p>
         </div>
       </section>
@@ -408,11 +413,11 @@
           <div class="eyebrow">Sobre mí</div>
           <h3>Quién soy</h3>
           <p>
-            Me gusta analizar cómo los objetos, las imágenes y las experiencias pueden comunicar ideas y emociones. En mi tiempo libre disfruto observar tendencias creativas, inspirarme con proyectos de otros diseñadores y aprender nuevas herramientas.
+            Mi formación en Diseño Integral me ha llevado a interesarme por proyectos en los que la afectividad no funciona como un elemento decorativo, sino como una dimensión central para comprender la experiencia humana.
           </p>
           <br>
           <p>
-            Me interesa desarrollar propuestas que no solo conecten emocionalmente con las personas, sino que también generen un impacto observable en su comportamiento y en su entorno.
+            Me interesa desarrollar propuestas que articulen investigación, sensibilidad y estrategia, con el fin de generar experiencias que influyan de manera significativa en la forma en que las personas sienten, actúan y se vinculan con su entorno.
           </p>
         </div>
       </section>
@@ -423,7 +428,7 @@
           <div class="eyebrow">Enfoque de diseño</div>
           <h2>Diseño desde la afectividad para transformar la experiencia</h2>
           <p>
-            Mi práctica parte de la idea de que la afectividad no es un elemento secundario, sino un componente central en la manera en que las personas interpretan su entorno y actúan dentro de él. Me interesa trabajar con problemáticas donde entran en tensión el bienestar individual y el colectivo, desarrollando propuestas que no solo generen conexión emocional, sino que también incidan en comportamientos, vínculos y experiencias de cuidado.
+            Mi práctica de diseño parte de la comprensión de que la afectividad no es un elemento secundario, sino un componente central en la manera en que las personas interpretan su entorno y actúan dentro de él. Me interesa trabajar con problemáticas en las que entran en tensión el bienestar individual y el colectivo, desarrollando propuestas que no solo generen conexión emocional, sino que también incidan en comportamientos, vínculos y experiencias de cuidado.
           </p>
         </div>
       </section>
@@ -442,25 +447,23 @@
       </section>
 
       <section class="card full-card" id="carta-motivo">
-  <div class="card-inner">
-    <div class="eyebrow">Proyectos</div>
-    <h2>Carta motivo</h2>
-    <p style="max-width: 850px; margin-bottom: 18px;">
-      Esta carta motivo sintetiza mi interés por desarrollar mi Proyecto Terminal
-      desde la línea de diseño afectivamente significativo, articulando mi trayectoria,
-      inquietudes y enfoque de trabajo.
-    </p>
+        <div class="card-inner">
+          <div class="eyebrow">Proyecto Terminal</div>
+          <h2>Carta motivo</h2>
+          <p style="max-width: 850px; margin-bottom: 18px;">
+            Esta carta sintetiza mi interés por desarrollar mi Proyecto Terminal desde la línea de diseño afectivamente significativo, articulando mi trayectoria, inquietudes y enfoque de trabajo.
+          </p>
 
-    <div class="project-links" style="margin-bottom: 20px;">
-      <a class="btn small-btn" href="Carta motivo Deyanira.pdf" target="_blank">Leer en pantalla completa</a>
-      <a class="btn small-btn" href="Carta motivo Deyanira.pdf" download>Descargar PDF</a>
-    </div>
+          <div class="project-links" style="margin-bottom: 20px;">
+            <a class="btn small-btn" href="Carta motivo Deyanira.pdf" target="_blank">Leer en pantalla completa</a>
+            <a class="btn small-btn" href="Carta motivo Deyanira.pdf" download>Descargar PDF</a>
+          </div>
 
-    <div class="pdf-viewer">
-      <iframe src="Carta motivo Deyanira.pdf" title="Carta motivo de Mariane Fornito Angulo"></iframe>
-    </div>
-  </div>
-</section>
+          <div class="pdf-viewer">
+            <iframe src="Carta motivo Deyanira.pdf" title="Carta motivo de Mariane Fornito Angulo"></iframe>
+          </div>
+        </div>
+      </section>
 
       <!-- FRASE -->
       <section class="card full-card quote">
@@ -575,7 +578,7 @@
             <p>
               <strong>Aporte desde el diseño afectivo:</strong> activar respuestas emocionales positivas a través de pequeños gestos de diseño en la vida diaria.
             </p>
-        </div>
+          </div>
         </div>
       </article>
 
@@ -590,10 +593,10 @@
             <h3>Saldo a salvo: decisiones financieras conscientes en estudiantes</h3>
             <p><strong>Sistema visual para hábitos y autonomía</strong></p>
             <p>
-              “Saldo a Salvo” es una propuesta enfocada en la gestión del dinero como clave para la autonomía y el bienestar universitario, planteada desde una comunicación visual clara, cercana y empática. 
+              “Saldo a Salvo” es una propuesta enfocada en la gestión del dinero como clave para la autonomía y el bienestar universitario, planteada desde una comunicación visual clara, cercana y empática.
             </p>
             <p>
-              El proyecto parte del hallazgo de una falta de hábitos administrativos y de la normalización de la precariedad económica, entendiendo que la educación financiera no puede reducirse a números, sino que también está atravesada por hábitos, decisiones y realidades emocionales distintas. 
+              El proyecto parte del hallazgo de una falta de hábitos administrativos y de la normalización de la precariedad económica, entendiendo que la educación financiera no puede reducirse a números, sino que también está atravesada por hábitos, decisiones y realidades emocionales distintas.
             </p>
             <p>
               <strong>Aporte desde el diseño afectivo:</strong> relacionar emoción, hábito y toma de decisiones, proponiendo una comunicación que acompañe en lugar de juzgar.
